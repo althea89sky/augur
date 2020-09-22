@@ -5,7 +5,7 @@ import 'ROOT/reporting/IUniverse.sol';
 import 'ROOT/reporting/IMarket.sol';
 import 'ROOT/reporting/IDisputeWindow.sol';
 import 'ROOT/trading/Order.sol';
-
+import 'ROOT/ICash.sol';
 
 contract IAugur {
     function createChildUniverse(bytes32 _parentPayoutDistributionHash, uint256[] memory _parentPayoutNumerators) public returns (IUniverse);
@@ -60,4 +60,5 @@ contract IAugur {
     function getUniverseForkIndex(IUniverse _universe) public view returns (uint256);
     function getMarketType(IMarket _market) public view returns (IMarket.MarketType);
     function getMarketOutcomes(IMarket _market) public view returns (bytes32[] memory _outcomes);
+    ICash public cash;
 }

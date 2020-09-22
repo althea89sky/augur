@@ -211,4 +211,8 @@ contract ParaAugur is IParaAugur, IAugurCreationDataGetter {
     function getMarketOutcomes(IMarket _market) public view returns (bytes32[] memory _outcomes) {
         return augur.getMarketOutcomes(_market);
     }
+
+    function getOriginCash() public view returns (address) {
+        return address(augur.cash);
+    }
 }
